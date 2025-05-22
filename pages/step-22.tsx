@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-
-
 import { db } from "../lib/firebaseConfig";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useRouter } from "next/router"
@@ -38,15 +36,16 @@ export default function Step22() {
       logExit();
     };
   }, []);
-  const router = useRouter()
-  const [loading, setLoading] = useState(true)
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [])
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-white px-4 py-10">
@@ -75,5 +74,5 @@ export default function Step22() {
         )}
       </div>
     </div>
-  )
+  );
 }
